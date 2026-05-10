@@ -57,38 +57,41 @@ This project implements a full XML-based data pipeline for a fictional football 
 - Final integration and ZIP packaging of the project
 
 ---
-
-## 📁 Project Structure
-
 ```
 python-xls-project/
 ├── data/
-│   ├── football_club.xml          # Source XML data (14+ entities)
-│   └── football_club.xsd          # XML Schema validation
+│   ├── football_club.xml        # Source XML data (14+ entities)
+│   └── football_club.xsd        # XML Schema validation
 │
 ├── xslt/
-│   ├── players_roster.xsl         # Players directory
-│   ├── team_overview.xsl          # Teams by position
-│   ├── match_calendar.xsl         # Match schedule
-│   ├── coaching_staff.xsl         # Coach directory
-│   ├── training_schedule.xsl      # Training sessions
-│   └── club_dashboard.xsl         # Executive summary
+│   ├── players_roster.xsl
+│   ├── team_overview.xsl
+│   ├── match_calendar.xsl
+│   ├── coaching_staff.xsl
+│   ├── training_schedule.xsl
+│   └── club_dashboard.xsl
 │
 ├── python/
-│   ├── transform_xml_to_html.py   # Main transformation script
-│   └── requirements.txt            # Python dependencies
+│   ├── requirements.txt
+│   ├── transform_xml_to_html.py
+│   ├── transform_xml_to_json.py
+│   └── transform_xml_to_xml.py
 │
 ├── output/
-│   ├── 01_players_roster.html     # Generated report
-│   ├── 02_team_overview.html      # Generated report
-│   ├── 03_match_calendar.html     # Generated report
-│   ├── 04_coaching_staff.html     # Generated report
-│   ├── 05_training_schedule.html  # Generated report
-│   ├── 06_club_dashboard.html     # Generated report
-│   └── README.md                  # File descriptions
+│   ├── 01_players_roster.html
+│   ├── 02_team_overview.html
+│   ├── 03_match_calendar.html
+│   ├── 04_coaching_staff.html
+│   ├── 05_training_schedule.html
+│   ├── 06_club_dashboard.html
+│   ├── sessions.json 
+│   ├── active_members.json 
+│   ├── rapport_joueurs.xml
+│   ├── rapport_calendrier.xml 
+│   └── README.md
 │
-├── .gitignore                      # Git ignore rules
-└── README.md                       # This file
+├── .gitignore
+└── README.md
 ```
 ---
 
@@ -108,7 +111,9 @@ pip install -r python/requirements.txt
 cd python
 python transform_xml_to_html.py
 ```
+```
 **Output:** files generated in `output/` folder
+```
 ---
 ## 🔧 Technical Details
 XML → Data modeling
