@@ -1,0 +1,82 @@
+
+  {
+    "coaches": [
+      
+      {
+        "coachId": "COA-001",
+        "name": "PhilippeDurand",
+        "sessions": [
+          
+          {
+            "day": "Tuesday",
+            "type": "Technical",
+            "intensity": "Medium"
+          },
+          {
+            "day": "Thursday",
+            "type": "Tactical",
+            "intensity": "High"
+          }
+        ]
+      },
+      {
+        "coachId": "COA-002",
+        "name": "MarcVasseur",
+        "sessions": [
+          
+          {
+            "day": "Wednesday",
+            "type": "Technical",
+            "intensity": "Medium"
+          },
+          {
+            "day": "Saturday",
+            "type": "Match Preparation",
+            "intensity": "High"
+          }
+        ]
+      },
+      {
+        "coachId": "COA-003",
+        "name": "NathalieMercier",
+        "sessions": [
+          
+          {
+            "day": "Monday",
+            "type": "Physical",
+            "intensity": "High"
+          },
+          {
+            "day": "Wednesday",
+            "type": "Tactical",
+            "intensity": "Medium"
+          }
+        ]
+      },
+      {
+        "coachId": "COA-004",
+        "name": "DavidSantos",
+        "sessions": [
+          
+          {
+            "day": "Tuesday",
+            "type": "Technical",
+            "intensity": "High"
+          }
+        ]
+      },
+      {
+        "coachId": "COA-005",
+        "name": "JulieLambert",
+        "sessions": [
+          
+          {
+            "day": "Friday",
+            "type": "Recovery",
+            "intensity": "Low"
+          }
+        ]
+      }
+    ]
+  }
+  

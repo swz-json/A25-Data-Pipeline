@@ -1,0 +1,62 @@
+
+    {
+      "activeMembers": [
+        
+        {
+          "membershipId": "MEM-001",
+          "type": "Adult",
+          "player": {
+            "id": "PLY-001",
+            "name": "KarimBenali"
+          }
+        },
+        {
+          "membershipId": "MEM-002",
+          "type": "Adult",
+          "player": {
+            "id": "PLY-002",
+            "name": "LucasDupont"
+          }
+        },
+        {
+          "membershipId": "MEM-003",
+          "type": "Adult",
+          "player": {
+            "id": "PLY-003",
+            "name": "MehdiRahmani"
+          }
+        },
+        {
+          "membershipId": "MEM-004",
+          "type": "Youth",
+          "player": {
+            "id": "PLY-007",
+            "name": "AmineKhelifi"
+          }
+        },
+        {
+          "membershipId": "MEM-005",
+          "type": "Youth",
+          "player": {
+            "id": "PLY-008",
+            "name": "HugoPetit"
+          }
+        },
+        {
+          "membershipId": "MEM-006",
+          "type": "Adult",
+          "player": {
+            "id": "PLY-011",
+            "name": "SarahMorel"
+          }
+        },
+        {
+          "membershipId": "MEM-008",
+          "type": "Family",
+          "player": {
+            "id": "PLY-009",
+            "name": "RayaneBouzid"
+          }
+        }
+      ]
+    }
