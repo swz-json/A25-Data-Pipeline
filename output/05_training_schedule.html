@@ -1,0 +1,324 @@
+<html xmlns:fc="http://www.dsti.football-club.com">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Schedule - FC Méditerranée</title>
+<style>
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+            min-height: 100vh;
+            color: #333;
+          }
+          .container {
+            max-width: 1100px;
+            margin: 0 auto;
+          }
+          h1 {
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+          }
+          .team-schedule {
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            overflow: hidden;
+          }
+          .team-schedule-header {
+            background: #2c3e50;
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .team-schedule-header h2 {
+            font-size: 18px;
+            margin: 0;
+            font-weight: 600;
+          }
+          .sessions-container {
+            padding: 20px;
+          }
+          .training-session {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid #2c3e50;
+            background: #f8f9fa;
+            border-radius: 0;
+            font-size: 12px;
+          }
+          .training-session:hover {
+            background: #f0f0f5;
+          }
+          .session-datetime {
+            display: flex;
+            flex-direction: column;
+            min-width: 130px;
+            font-weight: 600;
+            color: #2c3e50;
+          }
+          .session-date {
+            font-size: 12px;
+          }
+          .session-time {
+            font-size: 14px;
+            color: #333;
+          }
+          .session-details {
+            flex: 1;
+            margin: 0 20px;
+          }
+          .session-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 2px;
+          }
+          .session-coach {
+            font-size: 11px;
+            color: #666;
+          }
+          .session-type {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #2c3e50;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-right: 6px;
+            margin-top: 2px;
+            border: 1px solid #d0d0d0;
+            text-transform: uppercase;
+          }
+          .session-location {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            min-width: 130px;
+            text-align: right;
+            font-size: 12px;
+          }
+          .location-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+          }
+          .location-facility {
+            font-size: 10px;
+            color: #666;
+          }
+          .facility-badge {
+            display: inline-block;
+            background: #f9f4e6;
+            color: #6b4423;
+            padding: 2px 5px;
+            border-radius: 2px;
+            font-size: 10px;
+            margin-top: 2px;
+            border: 1px solid #e0d0c0;
+          }
+          .no-sessions {
+            text-align: center;
+            padding: 30px;
+            color: #999;
+            font-style: italic;
+          }
+          .session-duration {
+            font-size: 10px;
+            color: #999;
+            margin-top: 2px;
+          }
+        </style>
+</head>
+<body><div class="container">
+<h1>🏃‍♂️ Training Schedule</h1>
+<div class="team-schedule">
+<div class="team-schedule-header">
+<h2>FC Méditerranée - Seniors A - Senior</h2>
+<div>👥 <strong>6</strong> Players</div>
+</div>
+<div class="sessions-container">
+<div class="training-session">
+<div class="session-datetime">
+<span class="session-date">Friday</span><span class="session-time">17:30</span>
+</div>
+<div class="session-details">
+<div class="session-title">Light jogging and stretching before weekend match</div>
+<div class="session-coach">
+          Coach: JulieLambert</div>
+<div>
+<span class="session-type">Recovery</span><span class="session-type">Low</span>
+</div>
+<div class="session-duration">
+          Duration: 17:30 - 18:30</div>
+</div>
+<div class="session-location">
+<div class="location-name">Salle de Musculation</div>
+<span class="facility-badge">Gym</span>
+</div>
+</div>
+<div class="training-session">
+<div class="session-datetime">
+<span class="session-date">Thursday</span><span class="session-time">18:00</span>
+</div>
+<div class="session-details">
+<div class="session-title">Set pieces and match simulation</div>
+<div class="session-coach">
+          Coach: PhilippeDurand</div>
+<div>
+<span class="session-type">Tactical</span><span class="session-type">High</span>
+</div>
+<div class="session-duration">
+          Duration: 18:00 - 20:00</div>
+</div>
+<div class="session-location">
+<div class="location-name">Stade Principal André Roche</div>
+<span class="facility-badge">Natural Grass Pitch</span>
+</div>
+</div>
+<div class="training-session">
+<div class="session-datetime">
+<span class="session-date">Tuesday</span><span class="session-time">16:00</span>
+</div>
+<div class="session-details">
+<div class="session-title">Shot stopping, distribution, and cross claiming</div>
+<div class="session-coach">
+          Coach: DavidSantos</div>
+<div>
+<span class="session-type">Technical</span><span class="session-type">High</span>
+</div>
+<div class="session-duration">
+          Duration: 16:00 - 17:30</div>
+</div>
+<div class="session-location">
+<div class="location-name">Stade Principal André Roche</div>
+<span class="facility-badge">Natural Grass Pitch</span>
+</div>
+</div>
+<div class="training-session">
+<div class="session-datetime">
+<span class="session-date">Tuesday</span><span class="session-time">18:00</span>
+</div>
+<div class="session-details">
+<div class="session-title">Ball control drills and passing combinations</div>
+<div class="session-coach">
+          Coach: PhilippeDurand</div>
+<div>
+<span class="session-type">Technical</span><span class="session-type">Medium</span>
+</div>
+<div class="session-duration">
+          Duration: 18:00 - 20:00</div>
+</div>
+<div class="session-location">
+<div class="location-name">Stade Principal André Roche</div>
+<span class="facility-badge">Natural Grass Pitch</span>
+</div>
+</div>
+</div>
+</div>
+<div class="team-schedule">
+<div class="team-schedule-header">
+<h2>FC Méditerranée - Féminines - Senior</h2>
+<div>👥 <strong>4</strong> Players</div>
+</div>
+<div class="sessions-container">
+<div class="training-session">
+<div class="session-datetime">
+<span class="session-date">Monday</span><span class="session-time">18:30</span>
+</div>
+<div class="session-details">
+<div class="session-title">Endurance and strength conditioning</div>
+<div class="session-coach">
+          Coach: NathalieMercier</div>
+<div>
+<span class="session-type">Physical</span><span class="session-type">High</span>
+</div>
+<div class="session-duration">
+          Duration: 18:30 - 20:30</div>
+</div>
+<div class="session-location">
+<div class="location-name">Stade Principal André Roche</div>
+<span class="facility-badge">Natural Grass Pitch</span>
+</div>
+</div>
+<div class="training-session">
+<div class="session-datetime">
+<span class="session-date">Wednesday</span><span class="session-time">18:30</span>
+</div>
+<div class="session-details">
+<div class="session-title">Defensive organization and counter-attack patterns</div>
+<div class="session-coach">
+          Coach: NathalieMercier</div>
+<div>
+<span class="session-type">Tactical</span><span class="session-type">Medium</span>
+</div>
+<div class="session-duration">
+          Duration: 18:30 - 20:00</div>
+</div>
+<div class="session-location">
+<div class="location-name">Terrain Synthétique B</div>
+<span class="facility-badge">Synthetic Pitch</span>
+</div>
+</div>
+</div>
+</div>
+<div class="team-schedule">
+<div class="team-schedule-header">
+<h2>FC Méditerranée - U17 - U17</h2>
+<div>👥 <strong>4</strong> Players</div>
+</div>
+<div class="sessions-container">
+<div class="training-session">
+<div class="session-datetime">
+<span class="session-date">Saturday</span><span class="session-time">09:00</span>
+</div>
+<div class="session-details">
+<div class="session-title">Full team tactical review and warm-up drills</div>
+<div class="session-coach">
+          Coach: MarcVasseur</div>
+<div>
+<span class="session-type">Match Preparation</span><span class="session-type">High</span>
+</div>
+<div class="session-duration">
+          Duration: 09:00 - 11:00</div>
+</div>
+<div class="session-location">
+<div class="location-name">Terrain Synthétique B</div>
+<span class="facility-badge">Synthetic Pitch</span>
+</div>
+</div>
+<div class="training-session">
+<div class="session-datetime">
+<span class="session-date">Wednesday</span><span class="session-time">14:00</span>
+</div>
+<div class="session-details">
+<div class="session-title">Dribbling and shooting practice</div>
+<div class="session-coach">
+          Coach: MarcVasseur</div>
+<div>
+<span class="session-type">Technical</span><span class="session-type">Medium</span>
+</div>
+<div class="session-duration">
+          Duration: 14:00 - 16:00</div>
+</div>
+<div class="session-location">
+<div class="location-name">Terrain Synthétique B</div>
+<span class="facility-badge">Synthetic Pitch</span>
+</div>
+</div>
+</div>
+</div>
+</div></body>
+</html>

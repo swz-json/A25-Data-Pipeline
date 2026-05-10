@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<cal:trainingCalendar xmlns:cal="http://www.example.com/xml/training-calendar" clubName="FC Méditerranée">
+  <cal:session sessionId="TRN-001" teamId="TEA-001">
+    <cal:schedule day="Tuesday" start="18:00:00" end="20:00:00"/>
+    <cal:focus>Technical</cal:focus>
+    <cal:intensity>Medium</cal:intensity>
+    <cal:description>Ball control drills and passing combinations</cal:description>
+    <cal:coachId>COA-001</cal:coachId>
+    <cal:facilityId>FAC-001</cal:facilityId>
+  </cal:session>
+  <cal:session sessionId="TRN-002" teamId="TEA-001">
+    <cal:schedule day="Thursday" start="18:00:00" end="20:00:00"/>
+    <cal:focus>Tactical</cal:focus>
+    <cal:intensity>High</cal:intensity>
+    <cal:description>Set pieces and match simulation</cal:description>
+    <cal:coachId>COA-001</cal:coachId>
+    <cal:facilityId>FAC-001</cal:facilityId>
+  </cal:session>
+  <cal:session sessionId="TRN-003" teamId="TEA-001">
+    <cal:schedule day="Friday" start="17:30:00" end="18:30:00"/>
+    <cal:focus>Recovery</cal:focus>
+    <cal:intensity>Low</cal:intensity>
+    <cal:description>Light jogging and stretching before weekend match</cal:description>
+    <cal:coachId>COA-005</cal:coachId>
+    <cal:facilityId>FAC-004</cal:facilityId>
+  </cal:session>
+  <cal:session sessionId="TRN-004" teamId="TEA-002">
+    <cal:schedule day="Wednesday" start="14:00:00" end="16:00:00"/>
+    <cal:focus>Technical</cal:focus>
+    <cal:intensity>Medium</cal:intensity>
+    <cal:description>Dribbling and shooting practice</cal:description>
+    <cal:coachId>COA-002</cal:coachId>
+    <cal:facilityId>FAC-002</cal:facilityId>
+  </cal:session>
+  <cal:session sessionId="TRN-005" teamId="TEA-002">
+    <cal:schedule day="Saturday" start="09:00:00" end="11:00:00"/>
+    <cal:focus>Match Preparation</cal:focus>
+    <cal:intensity>High</cal:intensity>
+    <cal:description>Full team tactical review and warm-up drills</cal:description>
+    <cal:coachId>COA-002</cal:coachId>
+    <cal:facilityId>FAC-002</cal:facilityId>
+  </cal:session>
+  <cal:session sessionId="TRN-006" teamId="TEA-003">
+    <cal:schedule day="Monday" start="18:30:00" end="20:30:00"/>
+    <cal:focus>Physical</cal:focus>
+    <cal:intensity>High</cal:intensity>
+    <cal:description>Endurance and strength conditioning</cal:description>
+    <cal:coachId>COA-003</cal:coachId>
+    <cal:facilityId>FAC-001</cal:facilityId>
+  </cal:session>
+  <cal:session sessionId="TRN-007" teamId="TEA-003">
+    <cal:schedule day="Wednesday" start="18:30:00" end="20:00:00"/>
+    <cal:focus>Tactical</cal:focus>
+    <cal:intensity>Medium</cal:intensity>
+    <cal:description>Defensive organization and counter-attack patterns</cal:description>
+    <cal:coachId>COA-003</cal:coachId>
+    <cal:facilityId>FAC-002</cal:facilityId>
+  </cal:session>
+  <cal:session sessionId="TRN-008" teamId="TEA-001">
+    <cal:schedule day="Tuesday" start="16:00:00" end="17:30:00"/>
+    <cal:focus>Technical</cal:focus>
+    <cal:intensity>High</cal:intensity>
+    <cal:description>Shot stopping, distribution, and cross claiming</cal:description>
+    <cal:coachId>COA-004</cal:coachId>
+    <cal:facilityId>FAC-001</cal:facilityId>
+  </cal:session>
+</cal:trainingCalendar>

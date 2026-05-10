@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  XML Database for FC Méditerranée - Football Club
+  Course: A25 - Data Pipeline 1 (DSTI)
+  Author: Wassim
+  
+  This file contains representative data for a fictional football club
+  including players, coaches, teams, training sessions, competitions,
+  facilities, equipment, memberships, and bookings.
+  
+  Valid against: football_club.xsd
+-->
+<fc:footballClub xmlns:fc="http://www.dsti.football-club.com"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.dsti.football-club.com football_club.xsd">
+
+  <!-- ============================================================= -->
+  <!-- CLUB INFORMATION                                               -->
+  <!-- ============================================================= -->
+  <fc:clubInfo>
+    <fc:name>FC Méditerranée</fc:name>
+    <fc:founded>1998</fc:founded>
+    <fc:motto>Ensemble vers la victoire</fc:motto>
+    <fc:address>
+      <fc:street>12 Avenue du Stade</fc:street>
+      <fc:city>Nice</fc:city>
+      <fc:postalCode>06000</fc:postalCode>
+      <fc:country>France</fc:country>
+    </fc:address>
+    <fc:website>http://www.fc-mediterranee.fr</fc:website>
+  </fc:clubInfo>
+
+  <!-- ============================================================= -->
+  <!-- PLAYERS                                                        -->
+  <!-- ============================================================= -->
+  <fc:players>
+    <!-- Senior Team A Players -->
+    <fc:player id="PLY-001" teamRef="TEA-001" isCaptain="true">
+      <fc:firstName>Karim</fc:firstName>
+      <fc:lastName>Benali</fc:lastName>
+      <fc:dateOfBirth>1995-03-12</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>k.benali@email.com</fc:email>
+        <fc:phone>+33612345678</fc:phone>
+      </fc:contact>
+      <fc:position>Midfielder</fc:position>
+      <fc:jerseyNumber>10</fc:jerseyNumber>
+      <fc:preferredFoot>Right</fc:preferredFoot>
+      <fc:height>178</fc:height>
+      <fc:weight>73</fc:weight>
+      <fc:joinDate>2018-07-01</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>22</fc:matchesPlayed>
+        <fc:goals>8</fc:goals>
+        <fc:assists>12</fc:assists>
+        <fc:yellowCards>3</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>1890</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <fc:player id="PLY-002" teamRef="TEA-001" isCaptain="false">
+      <fc:firstName>Lucas</fc:firstName>
+      <fc:lastName>Dupont</fc:lastName>
+      <fc:dateOfBirth>1997-08-25</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>l.dupont@email.com</fc:email>
+        <fc:phone>+33623456789</fc:phone>
+      </fc:contact>
+      <fc:position>Goalkeeper</fc:position>
+      <fc:jerseyNumber>1</fc:jerseyNumber>
+      <fc:preferredFoot>Right</fc:preferredFoot>
+      <fc:height>190</fc:height>
+      <fc:weight>85</fc:weight>
+      <fc:joinDate>2019-08-15</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>24</fc:matchesPlayed>
+        <fc:goals>0</fc:goals>
+        <fc:assists>1</fc:assists>
+        <fc:yellowCards>1</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>2160</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <fc:player id="PLY-003" teamRef="TEA-001" isCaptain="false">
+      <fc:firstName>Mehdi</fc:firstName>
+      <fc:lastName>Rahmani</fc:lastName>
+      <fc:dateOfBirth>1998-01-30</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>m.rahmani@email.com</fc:email>
+        <fc:phone>+33634567890</fc:phone>
+      </fc:contact>
+      <fc:position>Forward</fc:position>
+      <fc:jerseyNumber>9</fc:jerseyNumber>
+      <fc:preferredFoot>Left</fc:preferredFoot>
+      <fc:height>182</fc:height>
+      <fc:weight>78</fc:weight>
+      <fc:joinDate>2020-01-10</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>20</fc:matchesPlayed>
+        <fc:goals>14</fc:goals>
+        <fc:assists>5</fc:assists>
+        <fc:yellowCards>4</fc:yellowCards>
+        <fc:redCards>1</fc:redCards>
+        <fc:minutesPlayed>1650</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <fc:player id="PLY-004" teamRef="TEA-001" isCaptain="false">
+      <fc:firstName>Antoine</fc:firstName>
+      <fc:lastName>Martin</fc:lastName>
+      <fc:dateOfBirth>1996-11-05</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>a.martin@email.com</fc:email>
+        <fc:phone>+33645678901</fc:phone>
+      </fc:contact>
+      <fc:position>Defender</fc:position>
+      <fc:jerseyNumber>4</fc:jerseyNumber>
+      <fc:preferredFoot>Right</fc:preferredFoot>
+      <fc:height>186</fc:height>
+      <fc:weight>82</fc:weight>
+      <fc:joinDate>2017-06-20</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>23</fc:matchesPlayed>
+        <fc:goals>2</fc:goals>
+        <fc:assists>3</fc:assists>
+        <fc:yellowCards>6</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>2070</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <fc:player id="PLY-005" teamRef="TEA-001" isCaptain="false">
+      <fc:firstName>Youssef</fc:firstName>
+      <fc:lastName>El Amrani</fc:lastName>
+      <fc:dateOfBirth>1999-05-18</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>y.elamrani@email.com</fc:email>
+        <fc:phone>+33656789012</fc:phone>
+      </fc:contact>
+      <fc:position>Defender</fc:position>
+      <fc:jerseyNumber>5</fc:jerseyNumber>
+      <fc:preferredFoot>Both</fc:preferredFoot>
+      <fc:height>184</fc:height>
+      <fc:weight>80</fc:weight>
+      <fc:joinDate>2021-07-01</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>18</fc:matchesPlayed>
+        <fc:goals>1</fc:goals>
+        <fc:assists>2</fc:assists>
+        <fc:yellowCards>5</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>1530</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <fc:player id="PLY-006" teamRef="TEA-001" isCaptain="false">
+      <fc:firstName>Thomas</fc:firstName>
+      <fc:lastName>Leroy</fc:lastName>
+      <fc:dateOfBirth>2000-09-22</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>t.leroy@email.com</fc:email>
+        <fc:phone>+33667890123</fc:phone>
+      </fc:contact>
+      <fc:position>Midfielder</fc:position>
+      <fc:jerseyNumber>8</fc:jerseyNumber>
+      <fc:preferredFoot>Right</fc:preferredFoot>
+      <fc:height>175</fc:height>
+      <fc:weight>70</fc:weight>
+      <fc:joinDate>2022-01-15</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>19</fc:matchesPlayed>
+        <fc:goals>3</fc:goals>
+        <fc:assists>7</fc:assists>
+        <fc:yellowCards>2</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>1440</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <!-- U17 Team Players -->
+    <fc:player id="PLY-007" teamRef="TEA-002" isCaptain="true">
+      <fc:firstName>Amine</fc:firstName>
+      <fc:lastName>Khelifi</fc:lastName>
+      <fc:dateOfBirth>2008-04-14</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>a.khelifi@email.com</fc:email>
+        <fc:phone>+33678901234</fc:phone>
+      </fc:contact>
+      <fc:position>Forward</fc:position>
+      <fc:jerseyNumber>11</fc:jerseyNumber>
+      <fc:preferredFoot>Right</fc:preferredFoot>
+      <fc:height>172</fc:height>
+      <fc:weight>64</fc:weight>
+      <fc:joinDate>2021-09-01</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>16</fc:matchesPlayed>
+        <fc:goals>10</fc:goals>
+        <fc:assists>4</fc:assists>
+        <fc:yellowCards>1</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>1280</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <fc:player id="PLY-008" teamRef="TEA-002" isCaptain="false">
+      <fc:firstName>Hugo</fc:firstName>
+      <fc:lastName>Petit</fc:lastName>
+      <fc:dateOfBirth>2008-12-03</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>h.petit@email.com</fc:email>
+        <fc:phone>+33689012345</fc:phone>
+      </fc:contact>
+      <fc:position>Goalkeeper</fc:position>
+      <fc:jerseyNumber>1</fc:jerseyNumber>
+      <fc:preferredFoot>Right</fc:preferredFoot>
+      <fc:height>180</fc:height>
+      <fc:weight>70</fc:weight>
+      <fc:joinDate>2022-09-01</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>15</fc:matchesPlayed>
+        <fc:goals>0</fc:goals>
+        <fc:assists>0</fc:assists>
+        <fc:yellowCards>0</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>1350</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <fc:player id="PLY-009" teamRef="TEA-002" isCaptain="false">
+      <fc:firstName>Rayane</fc:firstName>
+      <fc:lastName>Bouzid</fc:lastName>
+      <fc:dateOfBirth>2009-02-28</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>r.bouzid@email.com</fc:email>
+        <fc:phone>+33690123456</fc:phone>
+      </fc:contact>
+      <fc:position>Midfielder</fc:position>
+      <fc:jerseyNumber>6</fc:jerseyNumber>
+      <fc:preferredFoot>Left</fc:preferredFoot>
+      <fc:height>168</fc:height>
+      <fc:weight>58</fc:weight>
+      <fc:joinDate>2023-09-01</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>14</fc:matchesPlayed>
+        <fc:goals>2</fc:goals>
+        <fc:assists>6</fc:assists>
+        <fc:yellowCards>2</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>1120</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <fc:player id="PLY-010" teamRef="TEA-002" isCaptain="false">
+      <fc:firstName>Nolan</fc:firstName>
+      <fc:lastName>Girard</fc:lastName>
+      <fc:dateOfBirth>2008-07-19</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>n.girard@email.com</fc:email>
+        <fc:phone>+33601234567</fc:phone>
+      </fc:contact>
+      <fc:position>Defender</fc:position>
+      <fc:jerseyNumber>3</fc:jerseyNumber>
+      <fc:preferredFoot>Right</fc:preferredFoot>
+      <fc:height>176</fc:height>
+      <fc:weight>66</fc:weight>
+      <fc:joinDate>2022-09-01</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>16</fc:matchesPlayed>
+        <fc:goals>0</fc:goals>
+        <fc:assists>1</fc:assists>
+        <fc:yellowCards>3</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>1380</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <!-- Women's Senior Team Players -->
+    <fc:player id="PLY-011" teamRef="TEA-003" isCaptain="true">
+      <fc:firstName>Sarah</fc:firstName>
+      <fc:lastName>Morel</fc:lastName>
+      <fc:dateOfBirth>1997-06-08</fc:dateOfBirth>
+      <fc:gender>Female</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>s.morel@email.com</fc:email>
+        <fc:phone>+33612340001</fc:phone>
+      </fc:contact>
+      <fc:position>Midfielder</fc:position>
+      <fc:jerseyNumber>10</fc:jerseyNumber>
+      <fc:preferredFoot>Right</fc:preferredFoot>
+      <fc:height>168</fc:height>
+      <fc:weight>62</fc:weight>
+      <fc:joinDate>2019-07-01</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>20</fc:matchesPlayed>
+        <fc:goals>6</fc:goals>
+        <fc:assists>9</fc:assists>
+        <fc:yellowCards>1</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>1750</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <fc:player id="PLY-012" teamRef="TEA-003" isCaptain="false">
+      <fc:firstName>Léa</fc:firstName>
+      <fc:lastName>Fontaine</fc:lastName>
+      <fc:dateOfBirth>2000-10-15</fc:dateOfBirth>
+      <fc:gender>Female</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>l.fontaine@email.com</fc:email>
+        <fc:phone>+33612340002</fc:phone>
+      </fc:contact>
+      <fc:position>Forward</fc:position>
+      <fc:jerseyNumber>7</fc:jerseyNumber>
+      <fc:preferredFoot>Left</fc:preferredFoot>
+      <fc:height>170</fc:height>
+      <fc:weight>60</fc:weight>
+      <fc:joinDate>2021-08-01</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>19</fc:matchesPlayed>
+        <fc:goals>11</fc:goals>
+        <fc:assists>3</fc:assists>
+        <fc:yellowCards>2</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>1600</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <fc:player id="PLY-013" teamRef="TEA-003" isCaptain="false">
+      <fc:firstName>Emma</fc:firstName>
+      <fc:lastName>Bernard</fc:lastName>
+      <fc:dateOfBirth>1999-03-21</fc:dateOfBirth>
+      <fc:gender>Female</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>e.bernard@email.com</fc:email>
+        <fc:phone>+33612340003</fc:phone>
+      </fc:contact>
+      <fc:position>Defender</fc:position>
+      <fc:jerseyNumber>2</fc:jerseyNumber>
+      <fc:preferredFoot>Right</fc:preferredFoot>
+      <fc:height>173</fc:height>
+      <fc:weight>65</fc:weight>
+      <fc:joinDate>2020-09-01</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>21</fc:matchesPlayed>
+        <fc:goals>1</fc:goals>
+        <fc:assists>4</fc:assists>
+        <fc:yellowCards>3</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>1890</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+
+    <fc:player id="PLY-014" teamRef="TEA-003" isCaptain="false">
+      <fc:firstName>Inès</fc:firstName>
+      <fc:lastName>Duval</fc:lastName>
+      <fc:dateOfBirth>2001-07-30</fc:dateOfBirth>
+      <fc:gender>Female</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>i.duval@email.com</fc:email>
+        <fc:phone>+33612340004</fc:phone>
+      </fc:contact>
+      <fc:position>Goalkeeper</fc:position>
+      <fc:jerseyNumber>1</fc:jerseyNumber>
+      <fc:preferredFoot>Right</fc:preferredFoot>
+      <fc:height>175</fc:height>
+      <fc:weight>68</fc:weight>
+      <fc:joinDate>2022-07-01</fc:joinDate>
+      <fc:statistics season="2025">
+        <fc:matchesPlayed>18</fc:matchesPlayed>
+        <fc:goals>0</fc:goals>
+        <fc:assists>0</fc:assists>
+        <fc:yellowCards>0</fc:yellowCards>
+        <fc:redCards>0</fc:redCards>
+        <fc:minutesPlayed>1620</fc:minutesPlayed>
+      </fc:statistics>
+    </fc:player>
+  </fc:players>
+
+  <!-- ============================================================= -->
+  <!-- COACHES                                                        -->
+  <!-- ============================================================= -->
+  <fc:coaches>
+    <fc:coach id="COA-001" teamRef="TEA-001">
+      <fc:firstName>Philippe</fc:firstName>
+      <fc:lastName>Durand</fc:lastName>
+      <fc:dateOfBirth>1975-11-20</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>p.durand@fcmed.fr</fc:email>
+        <fc:phone>+33611111111</fc:phone>
+      </fc:contact>
+      <fc:specialty>Head Coach</fc:specialty>
+      <fc:license>UEFA A</fc:license>
+      <fc:yearsExperience>18</fc:yearsExperience>
+      <fc:joinDate>2015-06-01</fc:joinDate>
+    </fc:coach>
+
+    <fc:coach id="COA-002" teamRef="TEA-002">
+      <fc:firstName>Marc</fc:firstName>
+      <fc:lastName>Vasseur</fc:lastName>
+      <fc:dateOfBirth>1982-04-15</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>m.vasseur@fcmed.fr</fc:email>
+        <fc:phone>+33622222222</fc:phone>
+      </fc:contact>
+      <fc:specialty>Youth Development</fc:specialty>
+      <fc:license>UEFA B</fc:license>
+      <fc:yearsExperience>10</fc:yearsExperience>
+      <fc:joinDate>2018-09-01</fc:joinDate>
+    </fc:coach>
+
+    <fc:coach id="COA-003" teamRef="TEA-003">
+      <fc:firstName>Nathalie</fc:firstName>
+      <fc:lastName>Mercier</fc:lastName>
+      <fc:dateOfBirth>1980-08-12</fc:dateOfBirth>
+      <fc:gender>Female</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>n.mercier@fcmed.fr</fc:email>
+        <fc:phone>+33633333333</fc:phone>
+      </fc:contact>
+      <fc:specialty>Head Coach</fc:specialty>
+      <fc:license>UEFA A</fc:license>
+      <fc:yearsExperience>14</fc:yearsExperience>
+      <fc:joinDate>2020-07-01</fc:joinDate>
+    </fc:coach>
+
+    <fc:coach id="COA-004">
+      <fc:firstName>David</fc:firstName>
+      <fc:lastName>Santos</fc:lastName>
+      <fc:dateOfBirth>1985-02-28</fc:dateOfBirth>
+      <fc:gender>Male</fc:gender>
+      <fc:nationality>Portuguese</fc:nationality>
+      <fc:contact>
+        <fc:email>d.santos@fcmed.fr</fc:email>
+        <fc:phone>+33644444444</fc:phone>
+      </fc:contact>
+      <fc:specialty>Goalkeeper Coach</fc:specialty>
+      <fc:license>National</fc:license>
+      <fc:yearsExperience>8</fc:yearsExperience>
+      <fc:joinDate>2021-08-01</fc:joinDate>
+    </fc:coach>
+
+    <fc:coach id="COA-005">
+      <fc:firstName>Julie</fc:firstName>
+      <fc:lastName>Lambert</fc:lastName>
+      <fc:dateOfBirth>1988-06-10</fc:dateOfBirth>
+      <fc:gender>Female</fc:gender>
+      <fc:nationality>French</fc:nationality>
+      <fc:contact>
+        <fc:email>j.lambert@fcmed.fr</fc:email>
+        <fc:phone>+33655555555</fc:phone>
+      </fc:contact>
+      <fc:specialty>Fitness Coach</fc:specialty>
+      <fc:license>National</fc:license>
+      <fc:yearsExperience>6</fc:yearsExperience>
+      <fc:joinDate>2022-01-15</fc:joinDate>
+    </fc:coach>
+  </fc:coaches>
+
+  <!-- ============================================================= -->
+  <!-- TEAMS                                                          -->
+  <!-- ============================================================= -->
+  <fc:teams>
+    <fc:team id="TEA-001">
+      <fc:name>FC Méditerranée - Seniors A</fc:name>
+      <fc:ageCategory>Senior</fc:ageCategory>
+      <fc:gender>Male</fc:gender>
+      <fc:level>Semi-Professional</fc:level>
+      <fc:formation>4-3-3</fc:formation>
+      <fc:playerRefs>
+        <fc:playerRef refId="PLY-001"/>
+        <fc:playerRef refId="PLY-002"/>
+        <fc:playerRef refId="PLY-003"/>
+        <fc:playerRef refId="PLY-004"/>
+        <fc:playerRef refId="PLY-005"/>
+        <fc:playerRef refId="PLY-006"/>
+      </fc:playerRefs>
+      <fc:coachRef refId="COA-001"/>
+    </fc:team>
+
+    <fc:team id="TEA-002">
+      <fc:name>FC Méditerranée - U17</fc:name>
+      <fc:ageCategory>U17</fc:ageCategory>
+      <fc:gender>Male</fc:gender>
+      <fc:level>Amateur</fc:level>
+      <fc:formation>4-4-2</fc:formation>
+      <fc:playerRefs>
+        <fc:playerRef refId="PLY-007"/>
+        <fc:playerRef refId="PLY-008"/>
+        <fc:playerRef refId="PLY-009"/>
+        <fc:playerRef refId="PLY-010"/>
+      </fc:playerRefs>
+      <fc:coachRef refId="COA-002"/>
+    </fc:team>
+
+    <fc:team id="TEA-003">
+      <fc:name>FC Méditerranée - Féminines</fc:name>
+      <fc:ageCategory>Senior</fc:ageCategory>
+      <fc:gender>Female</fc:gender>
+      <fc:level>Amateur</fc:level>
+      <fc:formation>4-2-3-1</fc:formation>
+      <fc:playerRefs>
+        <fc:playerRef refId="PLY-011"/>
+        <fc:playerRef refId="PLY-012"/>
+        <fc:playerRef refId="PLY-013"/>
+        <fc:playerRef refId="PLY-014"/>
+      </fc:playerRefs>
+      <fc:coachRef refId="COA-003"/>
+    </fc:team>
+  </fc:teams>
+
+  <!-- ============================================================= -->
+  <!-- TRAINING SESSIONS                                              -->
+  <!-- ============================================================= -->
+  <fc:trainingSessions>
+    <!-- Senior A training sessions -->
+    <fc:session id="TRN-001">
+      <fc:day>Tuesday</fc:day>
+      <fc:startTime>18:00:00</fc:startTime>
+      <fc:endTime>20:00:00</fc:endTime>
+      <fc:type>Technical</fc:type>
+      <fc:intensity>Medium</fc:intensity>
+      <fc:description>Ball control drills and passing combinations</fc:description>
+      <fc:teamRef refId="TEA-001"/>
+      <fc:coachRef refId="COA-001"/>
+      <fc:facilityRef refId="FAC-001"/>
+    </fc:session>
+
+    <fc:session id="TRN-002">
+      <fc:day>Thursday</fc:day>
+      <fc:startTime>18:00:00</fc:startTime>
+      <fc:endTime>20:00:00</fc:endTime>
+      <fc:type>Tactical</fc:type>
+      <fc:intensity>High</fc:intensity>
+      <fc:description>Set pieces and match simulation</fc:description>
+      <fc:teamRef refId="TEA-001"/>
+      <fc:coachRef refId="COA-001"/>
+      <fc:facilityRef refId="FAC-001"/>
+    </fc:session>
+
+    <fc:session id="TRN-003">
+      <fc:day>Friday</fc:day>
+      <fc:startTime>17:30:00</fc:startTime>
+      <fc:endTime>18:30:00</fc:endTime>
+      <fc:type>Recovery</fc:type>
+      <fc:intensity>Low</fc:intensity>
+      <fc:description>Light jogging and stretching before weekend match</fc:description>
+      <fc:teamRef refId="TEA-001"/>
+      <fc:coachRef refId="COA-005"/>
+      <fc:facilityRef refId="FAC-004"/>
+    </fc:session>
+
+    <!-- U17 training sessions -->
+    <fc:session id="TRN-004">
+      <fc:day>Wednesday</fc:day>
+      <fc:startTime>14:00:00</fc:startTime>
+      <fc:endTime>16:00:00</fc:endTime>
+      <fc:type>Technical</fc:type>
+      <fc:intensity>Medium</fc:intensity>
+      <fc:description>Dribbling and shooting practice</fc:description>
+      <fc:teamRef refId="TEA-002"/>
+      <fc:coachRef refId="COA-002"/>
+      <fc:facilityRef refId="FAC-002"/>
+    </fc:session>
+
+    <fc:session id="TRN-005">
+      <fc:day>Saturday</fc:day>
+      <fc:startTime>09:00:00</fc:startTime>
+      <fc:endTime>11:00:00</fc:endTime>
+      <fc:type>Match Preparation</fc:type>
+      <fc:intensity>High</fc:intensity>
+      <fc:description>Full team tactical review and warm-up drills</fc:description>
+      <fc:teamRef refId="TEA-002"/>
+      <fc:coachRef refId="COA-002"/>
+      <fc:facilityRef refId="FAC-002"/>
+    </fc:session>
+
+    <!-- Women's team training sessions -->
+    <fc:session id="TRN-006">
+      <fc:day>Monday</fc:day>
+      <fc:startTime>18:30:00</fc:startTime>
+      <fc:endTime>20:30:00</fc:endTime>
+      <fc:type>Physical</fc:type>
+      <fc:intensity>High</fc:intensity>
+      <fc:description>Endurance and strength conditioning</fc:description>
+      <fc:teamRef refId="TEA-003"/>
+      <fc:coachRef refId="COA-003"/>
+      <fc:facilityRef refId="FAC-001"/>
+    </fc:session>
+
+    <fc:session id="TRN-007">
+      <fc:day>Wednesday</fc:day>
+      <fc:startTime>18:30:00</fc:startTime>
+      <fc:endTime>20:00:00</fc:endTime>
+      <fc:type>Tactical</fc:type>
+      <fc:intensity>Medium</fc:intensity>
+      <fc:description>Defensive organization and counter-attack patterns</fc:description>
+      <fc:teamRef refId="TEA-003"/>
+      <fc:coachRef refId="COA-003"/>
+      <fc:facilityRef refId="FAC-002"/>
+    </fc:session>
+
+    <!-- Goalkeeper specific training -->
+    <fc:session id="TRN-008">
+      <fc:day>Tuesday</fc:day>
+      <fc:startTime>16:00:00</fc:startTime>
+      <fc:endTime>17:30:00</fc:endTime>
+      <fc:type>Technical</fc:type>
+      <fc:intensity>High</fc:intensity>
+      <fc:description>Shot stopping, distribution, and cross claiming</fc:description>
+      <fc:teamRef refId="TEA-001"/>
+      <fc:coachRef refId="COA-004"/>
+      <fc:facilityRef refId="FAC-001"/>
+    </fc:session>
+  </fc:trainingSessions>
+
+  <!-- ============================================================= -->
+  <!-- COMPETITIONS AND MATCHES                                       -->
+  <!-- ============================================================= -->
+  <fc:competitions>
+    <!-- Senior League -->
+    <fc:competition id="CMP-001">
+      <fc:name>Ligue Régionale Méditerranée</fc:name>
+      <fc:type>League</fc:type>
+      <fc:season>2025-2026</fc:season>
+      <fc:matches>
+        <fc:match id="MAT-001">
+          <fc:date>2025-09-14</fc:date>
+          <fc:kickoffTime>15:00:00</fc:kickoffTime>
+          <fc:opponent>AS Riviera</fc:opponent>
+          <fc:venue>Home</fc:venue>
+          <fc:score>
+            <fc:home>3</fc:home>
+            <fc:away>1</fc:away>
+          </fc:score>
+          <fc:result>Win</fc:result>
+          <fc:attendance>450</fc:attendance>
+          <fc:goals>
+            <fc:goal scorerRef="PLY-003" assistRef="PLY-001">
+              <fc:minute>12</fc:minute>
+              <fc:type>Open Play</fc:type>
+            </fc:goal>
+            <fc:goal scorerRef="PLY-001">
+              <fc:minute>34</fc:minute>
+              <fc:type>Free Kick</fc:type>
+            </fc:goal>
+            <fc:goal scorerRef="PLY-003" assistRef="PLY-006">
+              <fc:minute>78</fc:minute>
+              <fc:type>Header</fc:type>
+            </fc:goal>
+          </fc:goals>
+          <fc:cards>
+            <fc:card playerRef="PLY-004">
+              <fc:minute>55</fc:minute>
+              <fc:type>Yellow</fc:type>
+              <fc:reason>Tactical foul</fc:reason>
+            </fc:card>
+          </fc:cards>
+          <fc:teamRef refId="TEA-001"/>
+        </fc:match>
+
+        <fc:match id="MAT-002">
+          <fc:date>2025-09-21</fc:date>
+          <fc:kickoffTime>15:00:00</fc:kickoffTime>
+          <fc:opponent>FC Côte d'Azur</fc:opponent>
+          <fc:venue>Away</fc:venue>
+          <fc:score>
+            <fc:home>2</fc:home>
+            <fc:away>2</fc:away>
+          </fc:score>
+          <fc:result>Draw</fc:result>
+          <fc:attendance>600</fc:attendance>
+          <fc:goals>
+            <fc:goal scorerRef="PLY-003" assistRef="PLY-001">
+              <fc:minute>23</fc:minute>
+              <fc:type>Open Play</fc:type>
+            </fc:goal>
+            <fc:goal scorerRef="PLY-006">
+              <fc:minute>67</fc:minute>
+              <fc:type>Open Play</fc:type>
+            </fc:goal>
+          </fc:goals>
+          <fc:cards>
+            <fc:card playerRef="PLY-005">
+              <fc:minute>40</fc:minute>
+              <fc:type>Yellow</fc:type>
+              <fc:reason>Unsporting behavior</fc:reason>
+            </fc:card>
+            <fc:card playerRef="PLY-003">
+              <fc:minute>82</fc:minute>
+              <fc:type>Yellow</fc:type>
+              <fc:reason>Time wasting</fc:reason>
+            </fc:card>
+          </fc:cards>
+          <fc:teamRef refId="TEA-001"/>
+        </fc:match>
+
+        <fc:match id="MAT-003">
+          <fc:date>2025-10-05</fc:date>
+          <fc:kickoffTime>15:00:00</fc:kickoffTime>
+          <fc:opponent>Olympique Cannes</fc:opponent>
+          <fc:venue>Home</fc:venue>
+          <fc:score>
+            <fc:home>1</fc:home>
+            <fc:away>0</fc:away>
+          </fc:score>
+          <fc:result>Win</fc:result>
+          <fc:attendance>520</fc:attendance>
+          <fc:goals>
+            <fc:goal scorerRef="PLY-001" assistRef="PLY-003">
+              <fc:minute>56</fc:minute>
+              <fc:type>Penalty</fc:type>
+            </fc:goal>
+          </fc:goals>
+          <fc:cards/>
+          <fc:teamRef refId="TEA-001"/>
+        </fc:match>
+      </fc:matches>
+    </fc:competition>
+
+    <!-- Regional Cup -->
+    <fc:competition id="CMP-002">
+      <fc:name>Coupe Régionale PACA</fc:name>
+      <fc:type>Cup</fc:type>
+      <fc:season>2025-2026</fc:season>
+      <fc:matches>
+        <fc:match id="MAT-004">
+          <fc:date>2025-10-12</fc:date>
+          <fc:kickoffTime>14:30:00</fc:kickoffTime>
+          <fc:opponent>US Marseille Nord</fc:opponent>
+          <fc:venue>Home</fc:venue>
+          <fc:score>
+            <fc:home>4</fc:home>
+            <fc:away>2</fc:away>
+          </fc:score>
+          <fc:result>Win</fc:result>
+          <fc:attendance>380</fc:attendance>
+          <fc:goals>
+            <fc:goal scorerRef="PLY-003">
+              <fc:minute>8</fc:minute>
+              <fc:type>Open Play</fc:type>
+            </fc:goal>
+            <fc:goal scorerRef="PLY-003" assistRef="PLY-001">
+              <fc:minute>25</fc:minute>
+              <fc:type>Open Play</fc:type>
+            </fc:goal>
+            <fc:goal scorerRef="PLY-001" assistRef="PLY-006">
+              <fc:minute>51</fc:minute>
+              <fc:type>Open Play</fc:type>
+            </fc:goal>
+            <fc:goal scorerRef="PLY-006" assistRef="PLY-005">
+              <fc:minute>88</fc:minute>
+              <fc:type>Open Play</fc:type>
+            </fc:goal>
+          </fc:goals>
+          <fc:cards>
+            <fc:card playerRef="PLY-004">
+              <fc:minute>30</fc:minute>
+              <fc:type>Yellow</fc:type>
+              <fc:reason>Hard tackle</fc:reason>
+            </fc:card>
+            <fc:card playerRef="PLY-003">
+              <fc:minute>70</fc:minute>
+              <fc:type>Red</fc:type>
+              <fc:reason>Violent conduct</fc:reason>
+            </fc:card>
+          </fc:cards>
+          <fc:teamRef refId="TEA-001"/>
+        </fc:match>
+      </fc:matches>
+    </fc:competition>
+
+    <!-- Women's League -->
+    <fc:competition id="CMP-003">
+      <fc:name>Championnat Féminin Régional</fc:name>
+      <fc:type>League</fc:type>
+      <fc:season>2025-2026</fc:season>
+      <fc:matches>
+        <fc:match id="MAT-005">
+          <fc:date>2025-09-21</fc:date>
+          <fc:kickoffTime>14:00:00</fc:kickoffTime>
+          <fc:opponent>ES Féminin Toulon</fc:opponent>
+          <fc:venue>Home</fc:venue>
+          <fc:score>
+            <fc:home>2</fc:home>
+            <fc:away>0</fc:away>
+          </fc:score>
+          <fc:result>Win</fc:result>
+          <fc:attendance>200</fc:attendance>
+          <fc:goals>
+            <fc:goal scorerRef="PLY-012" assistRef="PLY-011">
+              <fc:minute>18</fc:minute>
+              <fc:type>Open Play</fc:type>
+            </fc:goal>
+            <fc:goal scorerRef="PLY-011">
+              <fc:minute>72</fc:minute>
+              <fc:type>Free Kick</fc:type>
+            </fc:goal>
+          </fc:goals>
+          <fc:cards/>
+          <fc:teamRef refId="TEA-003"/>
+        </fc:match>
+
+        <fc:match id="MAT-006">
+          <fc:date>2025-10-05</fc:date>
+          <fc:kickoffTime>14:00:00</fc:kickoffTime>
+          <fc:opponent>OGC Nice Féminin B</fc:opponent>
+          <fc:venue>Away</fc:venue>
+          <fc:score>
+            <fc:home>3</fc:home>
+            <fc:away>1</fc:away>
+          </fc:score>
+          <fc:result>Loss</fc:result>
+          <fc:attendance>350</fc:attendance>
+          <fc:goals>
+            <fc:goal scorerRef="PLY-012">
+              <fc:minute>44</fc:minute>
+              <fc:type>Penalty</fc:type>
+            </fc:goal>
+          </fc:goals>
+          <fc:cards>
+            <fc:card playerRef="PLY-013">
+              <fc:minute>38</fc:minute>
+              <fc:type>Yellow</fc:type>
+              <fc:reason>Late tackle</fc:reason>
+            </fc:card>
+          </fc:cards>
+          <fc:teamRef refId="TEA-003"/>
+        </fc:match>
+      </fc:matches>
+    </fc:competition>
+
+    <!-- U17 Tournament -->
+    <fc:competition id="CMP-004">
+      <fc:name>Tournoi des Jeunes Talents</fc:name>
+      <fc:type>Tournament</fc:type>
+      <fc:season>2025-2026</fc:season>
+      <fc:matches>
+        <fc:match id="MAT-007">
+          <fc:date>2025-10-26</fc:date>
+          <fc:kickoffTime>10:00:00</fc:kickoffTime>
+          <fc:opponent>AC Antibes U17</fc:opponent>
+          <fc:venue>Neutral</fc:venue>
+          <fc:score>
+            <fc:home>2</fc:home>
+            <fc:away>1</fc:away>
+          </fc:score>
+          <fc:result>Win</fc:result>
+          <fc:attendance>150</fc:attendance>
+          <fc:goals>
+            <fc:goal scorerRef="PLY-007" assistRef="PLY-009">
+              <fc:minute>15</fc:minute>
+              <fc:type>Open Play</fc:type>
+            </fc:goal>
+            <fc:goal scorerRef="PLY-007">
+              <fc:minute>63</fc:minute>
+              <fc:type>Header</fc:type>
+            </fc:goal>
+          </fc:goals>
+          <fc:cards>
+            <fc:card playerRef="PLY-010">
+              <fc:minute>48</fc:minute>
+              <fc:type>Yellow</fc:type>
+              <fc:reason>Foul play</fc:reason>
+            </fc:card>
+          </fc:cards>
+          <fc:teamRef refId="TEA-002"/>
+        </fc:match>
+      </fc:matches>
+    </fc:competition>
+  </fc:competitions>
+
+  <!-- ============================================================= -->
+  <!-- FACILITIES                                                     -->
+  <!-- ============================================================= -->
+  <fc:facilities>
+    <fc:facility id="FAC-001">
+      <fc:name>Stade Principal André Roche</fc:name>
+      <fc:type>Natural Grass Pitch</fc:type>
+      <fc:capacity>2500</fc:capacity>
+      <fc:status>Available</fc:status>
+      <fc:address>
+        <fc:street>12 Avenue du Stade</fc:street>
+        <fc:city>Nice</fc:city>
+        <fc:postalCode>06000</fc:postalCode>
+        <fc:country>France</fc:country>
+      </fc:address>
+      <fc:hasLighting>true</fc:hasLighting>
+      <fc:dimensions>
+        <fc:length>105</fc:length>
+        <fc:width>68</fc:width>
+      </fc:dimensions>
+    </fc:facility>
+
+    <fc:facility id="FAC-002">
+      <fc:name>Terrain Synthétique B</fc:name>
+      <fc:type>Synthetic Pitch</fc:type>
+      <fc:capacity>500</fc:capacity>
+      <fc:status>Available</fc:status>
+      <fc:address>
+        <fc:street>14 Avenue du Stade</fc:street>
+        <fc:city>Nice</fc:city>
+        <fc:postalCode>06000</fc:postalCode>
+        <fc:country>France</fc:country>
+      </fc:address>
+      <fc:hasLighting>true</fc:hasLighting>
+      <fc:dimensions>
+        <fc:length>100</fc:length>
+        <fc:width>64</fc:width>
+      </fc:dimensions>
+    </fc:facility>
+
+    <fc:facility id="FAC-003">
+      <fc:name>Salle Polyvalente</fc:name>
+      <fc:type>Indoor Hall</fc:type>
+      <fc:capacity>200</fc:capacity>
+      <fc:status>Available</fc:status>
+      <fc:address>
+        <fc:street>16 Avenue du Stade</fc:street>
+        <fc:city>Nice</fc:city>
+        <fc:postalCode>06000</fc:postalCode>
+        <fc:country>France</fc:country>
+      </fc:address>
+      <fc:hasLighting>true</fc:hasLighting>
+      <fc:dimensions>
+        <fc:length>40</fc:length>
+        <fc:width>20</fc:width>
+      </fc:dimensions>
+    </fc:facility>
+
+    <fc:facility id="FAC-004">
+      <fc:name>Salle de Musculation</fc:name>
+      <fc:type>Gym</fc:type>
+      <fc:capacity>30</fc:capacity>
+      <fc:status>Available</fc:status>
+      <fc:address>
+        <fc:street>12 Avenue du Stade</fc:street>
+        <fc:city>Nice</fc:city>
+        <fc:postalCode>06000</fc:postalCode>
+        <fc:country>France</fc:country>
+      </fc:address>
+      <fc:hasLighting>true</fc:hasLighting>
+    </fc:facility>
+
+    <fc:facility id="FAC-005">
+      <fc:name>Infirmerie</fc:name>
+      <fc:type>Medical Room</fc:type>
+      <fc:capacity>10</fc:capacity>
+      <fc:status>Available</fc:status>
+      <fc:address>
+        <fc:street>12 Avenue du Stade</fc:street>
+        <fc:city>Nice</fc:city>
+        <fc:postalCode>06000</fc:postalCode>
+        <fc:country>France</fc:country>
+      </fc:address>
+      <fc:hasLighting>true</fc:hasLighting>
+    </fc:facility>
+
+    <fc:facility id="FAC-006">
+      <fc:name>Vestiaire Principal</fc:name>
+      <fc:type>Changing Room</fc:type>
+      <fc:capacity>25</fc:capacity>
+      <fc:status>Under Maintenance</fc:status>
+      <fc:address>
+        <fc:street>12 Avenue du Stade</fc:street>
+        <fc:city>Nice</fc:city>
+        <fc:postalCode>06000</fc:postalCode>
+        <fc:country>France</fc:country>
+      </fc:address>
+      <fc:hasLighting>true</fc:hasLighting>
+    </fc:facility>
+  </fc:facilities>
+
+  <!-- ============================================================= -->
+  <!-- EQUIPMENT                                                      -->
+  <!-- ============================================================= -->
+  <fc:equipment>
+    <fc:item id="EQP-001">
+      <fc:name>Ballon Adidas Match Pro</fc:name>
+      <fc:category>Ball</fc:category>
+      <fc:quantity>30</fc:quantity>
+      <fc:condition>Good</fc:condition>
+      <fc:purchaseDate>2024-08-01</fc:purchaseDate>
+      <fc:unitPrice>45.00</fc:unitPrice>
+    </fc:item>
+
+    <fc:item id="EQP-002">
+      <fc:name>Jeu de Maillots Seniors (Domicile)</fc:name>
+      <fc:category>Kit</fc:category>
+      <fc:quantity>25</fc:quantity>
+      <fc:condition>Good</fc:condition>
+      <fc:purchaseDate>2025-07-15</fc:purchaseDate>
+      <fc:unitPrice>65.00</fc:unitPrice>
+    </fc:item>
+
+    <fc:item id="EQP-003">
+      <fc:name>Cônes d'entraînement</fc:name>
+      <fc:category>Training Gear</fc:category>
+      <fc:quantity>50</fc:quantity>
+      <fc:condition>Fair</fc:condition>
+      <fc:purchaseDate>2023-03-10</fc:purchaseDate>
+      <fc:unitPrice>3.50</fc:unitPrice>
+    </fc:item>
+
+    <fc:item id="EQP-004">
+      <fc:name>But d'entraînement portable</fc:name>
+      <fc:category>Goal</fc:category>
+      <fc:quantity>4</fc:quantity>
+      <fc:condition>Good</fc:condition>
+      <fc:purchaseDate>2024-02-20</fc:purchaseDate>
+      <fc:unitPrice>220.00</fc:unitPrice>
+    </fc:item>
+
+    <fc:item id="EQP-005">
+      <fc:name>Kit premiers secours</fc:name>
+      <fc:category>Medical</fc:category>
+      <fc:quantity>6</fc:quantity>
+      <fc:condition>New</fc:condition>
+      <fc:purchaseDate>2025-09-01</fc:purchaseDate>
+      <fc:unitPrice>85.00</fc:unitPrice>
+    </fc:item>
+
+    <fc:item id="EQP-006">
+      <fc:name>Chasubles d'entraînement</fc:name>
+      <fc:category>Training Gear</fc:category>
+      <fc:quantity>40</fc:quantity>
+      <fc:condition>Good</fc:condition>
+      <fc:purchaseDate>2024-09-01</fc:purchaseDate>
+      <fc:unitPrice>8.00</fc:unitPrice>
+    </fc:item>
+
+    <fc:item id="EQP-007">
+      <fc:name>Tondeuse gazon autoportée</fc:name>
+      <fc:category>Maintenance</fc:category>
+      <fc:quantity>1</fc:quantity>
+      <fc:condition>Fair</fc:condition>
+      <fc:purchaseDate>2021-04-15</fc:purchaseDate>
+      <fc:unitPrice>4500.00</fc:unitPrice>
+    </fc:item>
+  </fc:equipment>
+
+  <!-- ============================================================= -->
+  <!-- MEMBERSHIPS                                                    -->
+  <!-- ============================================================= -->
+  <fc:memberships>
+    <fc:membership id="MEM-001" autoRenew="true">
+      <fc:type>Adult</fc:type>
+      <fc:startDate>2025-09-01</fc:startDate>
+      <fc:endDate>2026-08-31</fc:endDate>
+      <fc:fee>350.00</fc:fee>
+      <fc:status>Active</fc:status>
+      <fc:paymentMethod>Bank Transfer</fc:paymentMethod>
+      <fc:memberRef refId="PLY-001"/>
+    </fc:membership>
+
+    <fc:membership id="MEM-002" autoRenew="true">
+      <fc:type>Adult</fc:type>
+      <fc:startDate>2025-09-01</fc:startDate>
+      <fc:endDate>2026-08-31</fc:endDate>
+      <fc:fee>350.00</fc:fee>
+      <fc:status>Active</fc:status>
+      <fc:paymentMethod>Card</fc:paymentMethod>
+      <fc:memberRef refId="PLY-002"/>
+    </fc:membership>
+
+    <fc:membership id="MEM-003" autoRenew="false">
+      <fc:type>Adult</fc:type>
+      <fc:startDate>2025-09-01</fc:startDate>
+      <fc:endDate>2026-08-31</fc:endDate>
+      <fc:fee>350.00</fc:fee>
+      <fc:status>Active</fc:status>
+      <fc:paymentMethod>Cash</fc:paymentMethod>
+      <fc:memberRef refId="PLY-003"/>
+    </fc:membership>
+
+    <fc:membership id="MEM-004" autoRenew="true">
+      <fc:type>Youth</fc:type>
+      <fc:startDate>2025-09-01</fc:startDate>
+      <fc:endDate>2026-08-31</fc:endDate>
+      <fc:fee>180.00</fc:fee>
+      <fc:status>Active</fc:status>
+      <fc:paymentMethod>Bank Transfer</fc:paymentMethod>
+      <fc:memberRef refId="PLY-007"/>
+    </fc:membership>
+
+    <fc:membership id="MEM-005" autoRenew="false">
+      <fc:type>Youth</fc:type>
+      <fc:startDate>2025-09-01</fc:startDate>
+      <fc:endDate>2026-08-31</fc:endDate>
+      <fc:fee>180.00</fc:fee>
+      <fc:status>Active</fc:status>
+      <fc:paymentMethod>Check</fc:paymentMethod>
+      <fc:memberRef refId="PLY-008"/>
+    </fc:membership>
+
+    <fc:membership id="MEM-006" autoRenew="true">
+      <fc:type>Adult</fc:type>
+      <fc:startDate>2025-09-01</fc:startDate>
+      <fc:endDate>2026-08-31</fc:endDate>
+      <fc:fee>350.00</fc:fee>
+      <fc:status>Active</fc:status>
+      <fc:paymentMethod>Card</fc:paymentMethod>
+      <fc:memberRef refId="PLY-011"/>
+    </fc:membership>
+
+    <fc:membership id="MEM-007" autoRenew="false">
+      <fc:type>VIP</fc:type>
+      <fc:startDate>2024-09-01</fc:startDate>
+      <fc:endDate>2025-08-31</fc:endDate>
+      <fc:fee>800.00</fc:fee>
+      <fc:status>Expired</fc:status>
+      <fc:paymentMethod>Bank Transfer</fc:paymentMethod>
+      <fc:memberRef refId="PLY-004"/>
+    </fc:membership>
+
+    <fc:membership id="MEM-008" autoRenew="true">
+      <fc:type>Family</fc:type>
+      <fc:startDate>2025-09-01</fc:startDate>
+      <fc:endDate>2026-08-31</fc:endDate>
+      <fc:fee>500.00</fc:fee>
+      <fc:status>Active</fc:status>
+      <fc:paymentMethod>Bank Transfer</fc:paymentMethod>
+      <fc:memberRef refId="PLY-009"/>
+    </fc:membership>
+  </fc:memberships>
+
+  <!-- ============================================================= -->
+  <!-- BOOKINGS                                                       -->
+  <!-- ============================================================= -->
+  <fc:bookings>
+    <fc:booking id="BOK-001">
+      <fc:date>2025-11-10</fc:date>
+      <fc:startTime>09:00:00</fc:startTime>
+      <fc:endTime>11:00:00</fc:endTime>
+      <fc:purpose>Friendly match vs local school team</fc:purpose>
+      <fc:status>Confirmed</fc:status>
+      <fc:facilityRef refId="FAC-002"/>
+      <fc:bookedBy refId="COA-002"/>
+    </fc:booking>
+
+    <fc:booking id="BOK-002">
+      <fc:date>2025-11-15</fc:date>
+      <fc:startTime>14:00:00</fc:startTime>
+      <fc:endTime>17:00:00</fc:endTime>
+      <fc:purpose>Annual club photo day</fc:purpose>
+      <fc:status>Confirmed</fc:status>
+      <fc:facilityRef refId="FAC-001"/>
+      <fc:bookedBy refId="COA-001"/>
+    </fc:booking>
+
+    <fc:booking id="BOK-003">
+      <fc:date>2025-11-20</fc:date>
+      <fc:startTime>18:00:00</fc:startTime>
+      <fc:endTime>20:00:00</fc:endTime>
+      <fc:purpose>Women's team extra training session</fc:purpose>
+      <fc:status>Pending</fc:status>
+      <fc:facilityRef refId="FAC-003"/>
+      <fc:bookedBy refId="COA-003"/>
+    </fc:booking>
+
+    <fc:booking id="BOK-004">
+      <fc:date>2025-12-01</fc:date>
+      <fc:startTime>10:00:00</fc:startTime>
+      <fc:endTime>12:00:00</fc:endTime>
+      <fc:purpose>Equipment maintenance and inventory check</fc:purpose>
+      <fc:status>Confirmed</fc:status>
+      <fc:facilityRef refId="FAC-004"/>
+      <fc:bookedBy refId="COA-005"/>
+    </fc:booking>
+
+    <fc:booking id="BOK-005">
+      <fc:date>2025-12-15</fc:date>
+      <fc:startTime>14:00:00</fc:startTime>
+      <fc:endTime>18:00:00</fc:endTime>
+      <fc:purpose>End of year club celebration</fc:purpose>
+      <fc:status>Pending</fc:status>
+      <fc:facilityRef refId="FAC-003"/>
+      <fc:bookedBy refId="COA-001"/>
+    </fc:booking>
+  </fc:bookings>
+
+</fc:footballClub>

@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  XML Schema for a Football Club Management System
+  Course: A25 - Data Pipeline 1 (DSTI)
+  Author: Wassim
+  
+  This schema models a complete football club with the following entities:
+  - Members (players, staff)
+  - Coaches with specialties
+  - Teams organized by age category
+  - Training sessions with scheduling
+  - Competitions and matches with detailed results
+  - Facilities (pitches, rooms)
+  - Equipment inventory
+  - Memberships with pricing and renewal
+  - Bookings for facilities
+  
+  Design principles:
+  - Modular structure with reusable complex types
+  - Fine-grained simple types with restrictions (enums, patterns, ranges)
+  - Use of keys and keyrefs for referential integrity
+  - Extensive use of attributes and elements for rich data modeling
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.dsti.football-club.com"
+           xmlns:fc="http://www.dsti.football-club.com"
+           elementFormDefault="qualified">
+
+  <!-- ============================================================= -->
+  <!-- SIMPLE TYPES - Fine grained restrictions                      -->
+  <!-- ============================================================= -->
+
+  <!-- Identifier pattern: e.g. PLY-001, COA-002, TEA-003 -->
+  <xs:simpleType name="idType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3}-[0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Email format validation -->
+  <xs:simpleType name="emailType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Phone number: international format -->
+  <xs:simpleType name="phoneType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\+[0-9]{1,3}[0-9]{6,14}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Gender enumeration -->
+  <xs:simpleType name="genderType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male"/>
+      <xs:enumeration value="Female"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Player position enumeration -->
+  <xs:simpleType name="positionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Goalkeeper"/>
+      <xs:enumeration value="Defender"/>
+      <xs:enumeration value="Midfielder"/>
+      <xs:enumeration value="Forward"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Preferred foot -->
+  <xs:simpleType name="footType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left"/>
+      <xs:enumeration value="Right"/>
+      <xs:enumeration value="Both"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Jersey number: 1 to 99 -->
+  <xs:simpleType name="jerseyNumberType">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="99"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Age category for teams -->
+  <xs:simpleType name="ageCategoryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="U13"/>
+      <xs:enumeration value="U15"/>
+      <xs:enumeration value="U17"/>
+      <xs:enumeration value="U19"/>
+      <xs:enumeration value="Senior"/>
+      <xs:enumeration value="Veteran"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Team level -->
+  <xs:simpleType name="levelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Amateur"/>
+      <xs:enumeration value="Semi-Professional"/>
+      <xs:enumeration value="Professional"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Coach specialty -->
+  <xs:simpleType name="specialtyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Head Coach"/>
+      <xs:enumeration value="Assistant Coach"/>
+      <xs:enumeration value="Goalkeeper Coach"/>
+      <xs:enumeration value="Fitness Coach"/>
+      <xs:enumeration value="Youth Development"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Coach license level -->
+  <xs:simpleType name="licenseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UEFA A"/>
+      <xs:enumeration value="UEFA B"/>
+      <xs:enumeration value="UEFA Pro"/>
+      <xs:enumeration value="National"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Training type -->
+  <xs:simpleType name="trainingTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Technical"/>
+      <xs:enumeration value="Tactical"/>
+      <xs:enumeration value="Physical"/>
+      <xs:enumeration value="Recovery"/>
+      <xs:enumeration value="Match Preparation"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Training intensity -->
+  <xs:simpleType name="intensityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Low"/>
+      <xs:enumeration value="Medium"/>
+      <xs:enumeration value="High"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Day of week -->
+  <xs:simpleType name="dayOfWeekType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Monday"/>
+      <xs:enumeration value="Tuesday"/>
+      <xs:enumeration value="Wednesday"/>
+      <xs:enumeration value="Thursday"/>
+      <xs:enumeration value="Friday"/>
+      <xs:enumeration value="Saturday"/>
+      <xs:enumeration value="Sunday"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Competition type -->
+  <xs:simpleType name="competitionTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="League"/>
+      <xs:enumeration value="Cup"/>
+      <xs:enumeration value="Friendly"/>
+      <xs:enumeration value="Tournament"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Match result -->
+  <xs:simpleType name="matchResultType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Win"/>
+      <xs:enumeration value="Loss"/>
+      <xs:enumeration value="Draw"/>
+      <xs:enumeration value="Pending"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Match venue type -->
+  <xs:simpleType name="venueType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Home"/>
+      <xs:enumeration value="Away"/>
+      <xs:enumeration value="Neutral"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Goal type -->
+  <xs:simpleType name="goalTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Open Play"/>
+      <xs:enumeration value="Penalty"/>
+      <xs:enumeration value="Free Kick"/>
+      <xs:enumeration value="Header"/>
+      <xs:enumeration value="Own Goal"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Card type -->
+  <xs:simpleType name="cardType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Yellow"/>
+      <xs:enumeration value="Red"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Facility type -->
+  <xs:simpleType name="facilityTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Natural Grass Pitch"/>
+      <xs:enumeration value="Synthetic Pitch"/>
+      <xs:enumeration value="Indoor Hall"/>
+      <xs:enumeration value="Gym"/>
+      <xs:enumeration value="Changing Room"/>
+      <xs:enumeration value="Meeting Room"/>
+      <xs:enumeration value="Medical Room"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Facility status -->
+  <xs:simpleType name="facilityStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Available"/>
+      <xs:enumeration value="Under Maintenance"/>
+      <xs:enumeration value="Closed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Equipment category -->
+  <xs:simpleType name="equipmentCategoryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ball"/>
+      <xs:enumeration value="Training Gear"/>
+      <xs:enumeration value="Kit"/>
+      <xs:enumeration value="Goal"/>
+      <xs:enumeration value="Medical"/>
+      <xs:enumeration value="Maintenance"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Equipment condition -->
+  <xs:simpleType name="conditionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="New"/>
+      <xs:enumeration value="Good"/>
+      <xs:enumeration value="Fair"/>
+      <xs:enumeration value="Poor"/>
+      <xs:enumeration value="Retired"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Membership type -->
+  <xs:simpleType name="membershipTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Youth"/>
+      <xs:enumeration value="Adult"/>
+      <xs:enumeration value="Family"/>
+      <xs:enumeration value="VIP"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Membership status -->
+  <xs:simpleType name="membershipStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active"/>
+      <xs:enumeration value="Expired"/>
+      <xs:enumeration value="Suspended"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Payment method -->
+  <xs:simpleType name="paymentMethodType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cash"/>
+      <xs:enumeration value="Card"/>
+      <xs:enumeration value="Bank Transfer"/>
+      <xs:enumeration value="Check"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Booking status -->
+  <xs:simpleType name="bookingStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Confirmed"/>
+      <xs:enumeration value="Pending"/>
+      <xs:enumeration value="Cancelled"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Score type: 0 to 99 -->
+  <xs:simpleType name="scoreType">
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:maxInclusive value="99"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Minute of match: 0 to 120+ -->
+  <xs:simpleType name="minuteType">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="130"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Percentage type: 0 to 100 -->
+  <xs:simpleType name="percentageType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Positive price -->
+  <xs:simpleType name="priceType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Capacity: positive integer -->
+  <xs:simpleType name="capacityType">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:maxInclusive value="100000"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Non-empty string -->
+  <xs:simpleType name="nonEmptyString">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ============================================================= -->
+  <!-- COMPLEX TYPES - Reusable building blocks                      -->
+  <!-- ============================================================= -->
+
+  <!-- Address type: reusable for facilities, club info -->
+  <xs:complexType name="addressType">
+    <xs:sequence>
+      <xs:element name="street" type="fc:nonEmptyString"/>
+      <xs:element name="city" type="fc:nonEmptyString"/>
+      <xs:element name="postalCode" type="xs:string"/>
+      <xs:element name="country" type="fc:nonEmptyString"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Contact info: reusable for persons -->
+  <xs:complexType name="contactType">
+    <xs:sequence>
+      <xs:element name="email" type="fc:emailType"/>
+      <xs:element name="phone" type="fc:phoneType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Person base type: shared by players, coaches, staff -->
+  <xs:complexType name="personType">
+    <xs:sequence>
+      <xs:element name="firstName" type="fc:nonEmptyString"/>
+      <xs:element name="lastName" type="fc:nonEmptyString"/>
+      <xs:element name="dateOfBirth" type="xs:date"/>
+      <xs:element name="gender" type="fc:genderType"/>
+      <xs:element name="nationality" type="fc:nonEmptyString"/>
+      <xs:element name="contact" type="fc:contactType"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="fc:idType" use="required"/>
+  </xs:complexType>
+
+  <!-- Player type: extends person with football-specific data -->
+  <xs:complexType name="playerType">
+    <xs:complexContent>
+      <xs:extension base="fc:personType">
+        <xs:sequence>
+          <xs:element name="position" type="fc:positionType"/>
+          <xs:element name="jerseyNumber" type="fc:jerseyNumberType"/>
+          <xs:element name="preferredFoot" type="fc:footType"/>
+          <xs:element name="height" type="xs:positiveInteger"/>  <!-- in cm -->
+          <xs:element name="weight" type="xs:positiveInteger"/>  <!-- in kg -->
+          <xs:element name="joinDate" type="xs:date"/>
+          <xs:element name="statistics" type="fc:playerStatsType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="teamRef" type="fc:idType" use="required"/>
+        <xs:attribute name="isCaptain" type="xs:boolean" default="false"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Player statistics -->
+  <xs:complexType name="playerStatsType">
+    <xs:sequence>
+      <xs:element name="matchesPlayed" type="xs:nonNegativeInteger"/>
+      <xs:element name="goals" type="xs:nonNegativeInteger"/>
+      <xs:element name="assists" type="xs:nonNegativeInteger"/>
+      <xs:element name="yellowCards" type="xs:nonNegativeInteger"/>
+      <xs:element name="redCards" type="xs:nonNegativeInteger"/>
+      <xs:element name="minutesPlayed" type="xs:nonNegativeInteger"/>
+    </xs:sequence>
+    <xs:attribute name="season" type="xs:gYear" use="required"/>
+  </xs:complexType>
+
+  <!-- Coach type: extends person with coaching-specific data -->
+  <xs:complexType name="coachType">
+    <xs:complexContent>
+      <xs:extension base="fc:personType">
+        <xs:sequence>
+          <xs:element name="specialty" type="fc:specialtyType"/>
+          <xs:element name="license" type="fc:licenseType"/>
+          <xs:element name="yearsExperience" type="xs:nonNegativeInteger"/>
+          <xs:element name="joinDate" type="xs:date"/>
+        </xs:sequence>
+        <xs:attribute name="teamRef" type="fc:idType" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Team type -->
+  <xs:complexType name="teamType">
+    <xs:sequence>
+      <xs:element name="name" type="fc:nonEmptyString"/>
+      <xs:element name="ageCategory" type="fc:ageCategoryType"/>
+      <xs:element name="gender" type="fc:genderType"/>
+      <xs:element name="level" type="fc:levelType"/>
+      <xs:element name="formation" type="fc:nonEmptyString"/>  <!-- e.g. 4-3-3 -->
+      <xs:element name="playerRefs">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="playerRef" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:attribute name="refId" type="fc:idType" use="required"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="coachRef">
+        <xs:complexType>
+          <xs:attribute name="refId" type="fc:idType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="fc:idType" use="required"/>
+  </xs:complexType>
+
+  <!-- Training session type -->
+  <xs:complexType name="trainingSessionType">
+    <xs:sequence>
+      <xs:element name="day" type="fc:dayOfWeekType"/>
+      <xs:element name="startTime" type="xs:time"/>
+      <xs:element name="endTime" type="xs:time"/>
+      <xs:element name="type" type="fc:trainingTypeType"/>
+      <xs:element name="intensity" type="fc:intensityType"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="teamRef">
+        <xs:complexType>
+          <xs:attribute name="refId" type="fc:idType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="coachRef">
+        <xs:complexType>
+          <xs:attribute name="refId" type="fc:idType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="facilityRef">
+        <xs:complexType>
+          <xs:attribute name="refId" type="fc:idType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="fc:idType" use="required"/>
+  </xs:complexType>
+
+  <!-- Goal event in a match -->
+  <xs:complexType name="goalEventType">
+    <xs:sequence>
+      <xs:element name="minute" type="fc:minuteType"/>
+      <xs:element name="type" type="fc:goalTypeType"/>
+    </xs:sequence>
+    <xs:attribute name="scorerRef" type="fc:idType" use="required"/>
+    <xs:attribute name="assistRef" type="fc:idType" use="optional"/>
+  </xs:complexType>
+
+  <!-- Card event in a match -->
+  <xs:complexType name="cardEventType">
+    <xs:sequence>
+      <xs:element name="minute" type="fc:minuteType"/>
+      <xs:element name="type" type="fc:cardType"/>
+      <xs:element name="reason" type="fc:nonEmptyString"/>
+    </xs:sequence>
+    <xs:attribute name="playerRef" type="fc:idType" use="required"/>
+  </xs:complexType>
+
+  <!-- Match type -->
+  <xs:complexType name="matchType">
+    <xs:sequence>
+      <xs:element name="date" type="xs:date"/>
+      <xs:element name="kickoffTime" type="xs:time"/>
+      <xs:element name="opponent" type="fc:nonEmptyString"/>
+      <xs:element name="venue" type="fc:venueType"/>
+      <xs:element name="score">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="home" type="fc:scoreType"/>
+            <xs:element name="away" type="fc:scoreType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="result" type="fc:matchResultType"/>
+      <xs:element name="attendance" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="goals" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="goal" type="fc:goalEventType" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cards" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="card" type="fc:cardEventType" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="teamRef">
+        <xs:complexType>
+          <xs:attribute name="refId" type="fc:idType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="fc:idType" use="required"/>
+  </xs:complexType>
+
+  <!-- Competition type -->
+  <xs:complexType name="competitionType">
+    <xs:sequence>
+      <xs:element name="name" type="fc:nonEmptyString"/>
+      <xs:element name="type" type="fc:competitionTypeType"/>
+      <xs:element name="season" type="xs:string"/>  <!-- e.g. 2025-2026 -->
+      <xs:element name="matches">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="match" type="fc:matchType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="fc:idType" use="required"/>
+  </xs:complexType>
+
+  <!-- Facility type -->
+  <xs:complexType name="facilityType">
+    <xs:sequence>
+      <xs:element name="name" type="fc:nonEmptyString"/>
+      <xs:element name="type" type="fc:facilityTypeType"/>
+      <xs:element name="capacity" type="fc:capacityType"/>
+      <xs:element name="status" type="fc:facilityStatusType"/>
+      <xs:element name="address" type="fc:addressType"/>
+      <xs:element name="hasLighting" type="xs:boolean"/>
+      <xs:element name="dimensions" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="length" type="xs:positiveInteger"/>  <!-- meters -->
+            <xs:element name="width" type="xs:positiveInteger"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="fc:idType" use="required"/>
+  </xs:complexType>
+
+  <!-- Equipment type -->
+  <xs:complexType name="equipmentType">
+    <xs:sequence>
+      <xs:element name="name" type="fc:nonEmptyString"/>
+      <xs:element name="category" type="fc:equipmentCategoryType"/>
+      <xs:element name="quantity" type="xs:positiveInteger"/>
+      <xs:element name="condition" type="fc:conditionType"/>
+      <xs:element name="purchaseDate" type="xs:date"/>
+      <xs:element name="unitPrice" type="fc:priceType"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="fc:idType" use="required"/>
+  </xs:complexType>
+
+  <!-- Membership type -->
+  <xs:complexType name="membershipType">
+    <xs:sequence>
+      <xs:element name="type" type="fc:membershipTypeType"/>
+      <xs:element name="startDate" type="xs:date"/>
+      <xs:element name="endDate" type="xs:date"/>
+      <xs:element name="fee" type="fc:priceType"/>
+      <xs:element name="status" type="fc:membershipStatusType"/>
+      <xs:element name="paymentMethod" type="fc:paymentMethodType"/>
+      <xs:element name="memberRef">
+        <xs:complexType>
+          <xs:attribute name="refId" type="fc:idType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="fc:idType" use="required"/>
+    <xs:attribute name="autoRenew" type="xs:boolean" default="false"/>
+  </xs:complexType>
+
+  <!-- Booking type -->
+  <xs:complexType name="bookingType">
+    <xs:sequence>
+      <xs:element name="date" type="xs:date"/>
+      <xs:element name="startTime" type="xs:time"/>
+      <xs:element name="endTime" type="xs:time"/>
+      <xs:element name="purpose" type="fc:nonEmptyString"/>
+      <xs:element name="status" type="fc:bookingStatusType"/>
+      <xs:element name="facilityRef">
+        <xs:complexType>
+          <xs:attribute name="refId" type="fc:idType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="bookedBy">
+        <xs:complexType>
+          <xs:attribute name="refId" type="fc:idType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="fc:idType" use="required"/>
+  </xs:complexType>
+
+  <!-- ============================================================= -->
+  <!-- ROOT ELEMENT                                                  -->
+  <!-- ============================================================= -->
+
+  <xs:element name="footballClub">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Club metadata -->
+        <xs:element name="clubInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="fc:nonEmptyString"/>
+              <xs:element name="founded" type="xs:gYear"/>
+              <xs:element name="motto" type="xs:string" minOccurs="0"/>
+              <xs:element name="address" type="fc:addressType"/>
+              <xs:element name="website" type="xs:anyURI" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Players collection -->
+        <xs:element name="players">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="player" type="fc:playerType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Coaches collection -->
+        <xs:element name="coaches">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="coach" type="fc:coachType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Teams collection -->
+        <xs:element name="teams">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="team" type="fc:teamType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Training sessions -->
+        <xs:element name="trainingSessions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="session" type="fc:trainingSessionType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Competitions and matches -->
+        <xs:element name="competitions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="competition" type="fc:competitionType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Facilities -->
+        <xs:element name="facilities">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="facility" type="fc:facilityType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Equipment inventory -->
+        <xs:element name="equipment">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="item" type="fc:equipmentType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Memberships -->
+        <xs:element name="memberships">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="membership" type="fc:membershipType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- Bookings -->
+        <xs:element name="bookings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="booking" type="fc:bookingType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+
+    <!-- =========================================================== -->
+    <!-- KEYS AND KEYREFS - Referential integrity                    -->
+    <!-- =========================================================== -->
+
+    <!-- Unique player IDs -->
+    <xs:key name="playerKey">
+      <xs:selector xpath="fc:players/fc:player"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+
+    <!-- Unique coach IDs -->
+    <xs:key name="coachKey">
+      <xs:selector xpath="fc:coaches/fc:coach"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+
+    <!-- Unique team IDs -->
+    <xs:key name="teamKey">
+      <xs:selector xpath="fc:teams/fc:team"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+
+    <!-- Unique facility IDs -->
+    <xs:key name="facilityKey">
+      <xs:selector xpath="fc:facilities/fc:facility"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+
+    <!-- Unique equipment IDs -->
+    <xs:key name="equipmentKey">
+      <xs:selector xpath="fc:equipment/fc:item"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+
+    <!-- Player teamRef must reference a valid team -->
+    <xs:keyref name="playerTeamRef" refer="fc:teamKey">
+      <xs:selector xpath="fc:players/fc:player"/>
+      <xs:field xpath="@teamRef"/>
+    </xs:keyref>
+
+    <!-- Team coachRef must reference a valid coach -->
+    <xs:keyref name="teamCoachRef" refer="fc:coachKey">
+      <xs:selector xpath="fc:teams/fc:team/fc:coachRef"/>
+      <xs:field xpath="@refId"/>
+    </xs:keyref>
+
+    <!-- Training session teamRef -->
+    <xs:keyref name="sessionTeamRef" refer="fc:teamKey">
+      <xs:selector xpath="fc:trainingSessions/fc:session/fc:teamRef"/>
+      <xs:field xpath="@refId"/>
+    </xs:keyref>
+
+    <!-- Training session coachRef -->
+    <xs:keyref name="sessionCoachRef" refer="fc:coachKey">
+      <xs:selector xpath="fc:trainingSessions/fc:session/fc:coachRef"/>
+      <xs:field xpath="@refId"/>
+    </xs:keyref>
+
+    <!-- Training session facilityRef -->
+    <xs:keyref name="sessionFacilityRef" refer="fc:facilityKey">
+      <xs:selector xpath="fc:trainingSessions/fc:session/fc:facilityRef"/>
+      <xs:field xpath="@refId"/>
+    </xs:keyref>
+
+    <!-- Booking facilityRef -->
+    <xs:keyref name="bookingFacilityRef" refer="fc:facilityKey">
+      <xs:selector xpath="fc:bookings/fc:booking/fc:facilityRef"/>
+      <xs:field xpath="@refId"/>
+    </xs:keyref>
+
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,378 @@
+<html xmlns:fc="http://www.dsti.football-club.com">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Dashboard - FC Méditerranée</title>
+<style>
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+            min-height: 100vh;
+            color: #333;
+          }
+          .container {
+            max-width: 1400px;
+            margin: 0 auto;
+          }
+          .header {
+            background: #2c3e50;
+            color: white;
+            padding: 28px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            border: 1px solid #1a252f;
+          }
+          .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 600;
+          }
+          .club-motto {
+            font-size: 13px;
+            opacity: 0.8;
+            font-style: italic;
+          }
+          .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+          }
+          .stat-card {
+            background: white;
+            border-radius: 4px;
+            padding: 18px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
+          }
+          .stat-card:hover {
+            border-color: #2c3e50;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+          }
+          .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 8px 0;
+          }
+          .stat-label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: 600;
+          }
+          .stat-icon {
+            font-size: 20px;
+            margin-bottom: 4px;
+          }
+          .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+          }
+          .card {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+          }
+          .card-header {
+            background: #2c3e50;
+            color: white;
+            padding: 14px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 1px solid #1a252f;
+          }
+          .card-body {
+            padding: 16px;
+          }
+          .player-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 12px;
+          }
+          .player-item:last-child {
+            border-bottom: none;
+          }
+          .player-rank {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 22px;
+            font-weight: 600;
+            font-size: 11px;
+            margin-right: 8px;
+          }
+          .player-name {
+            flex: 1;
+            font-weight: 600;
+            color: #333;
+          }
+          .player-stat {
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 12px;
+          }
+          .team-item {
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+            border-left: 3px solid #2c3e50;
+            border-radius: 0;
+            font-size: 12px;
+          }
+          .team-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 3px;
+          }
+          .team-info {
+            font-size: 11px;
+            color: #666;
+          }
+          .team-info span {
+            margin-right: 12px;
+          }
+          .facility-item {
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+            border-left: 3px solid #2c3e50;
+            border-radius: 0;
+            font-size: 12px;
+          }
+          .facility-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 3px;
+          }
+          .facility-type {
+            font-size: 10px;
+            color: #666;
+          }
+          .empty-message {
+            color: #999;
+            font-style: italic;
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+          }
+        </style>
+</head>
+<body><div class="container">
+<div class="header">
+<h1>⚽ FC Méditerranée</h1>
+<div class="club-motto">
+              "Ensemble vers la victoire"
+            </div>
+<div style="margin-top: 10px; font-size: 13px;">
+              Founded 1998 • Nice, France</div>
+</div>
+<div class="dashboard-grid">
+<div class="stat-card">
+<div class="stat-icon">👥</div>
+<div class="stat-label">Total Players</div>
+<div class="stat-value">14</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">🏆</div>
+<div class="stat-label">Teams</div>
+<div class="stat-value">3</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">👨‍🏫</div>
+<div class="stat-label">Coaches</div>
+<div class="stat-value">5</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">🏟️</div>
+<div class="stat-label">Facilities</div>
+<div class="stat-value">6</div>
+</div>
+</div>
+<div class="content-grid">
+<div class="card">
+<div class="card-header">🥅 Top Scorers (2025)</div>
+<div class="card-body">
+<div class="player-item">
+<span><span class="player-rank">1</span><span class="player-name">MehdiRahmani</span></span><span class="player-stat">⚽ 14</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">2</span><span class="player-name">LéaFontaine</span></span><span class="player-stat">⚽ 11</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">3</span><span class="player-name">AmineKhelifi</span></span><span class="player-stat">⚽ 10</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">4</span><span class="player-name">KarimBenali</span></span><span class="player-stat">⚽ 8</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">5</span><span class="player-name">SarahMorel</span></span><span class="player-stat">⚽ 6</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">6</span><span class="player-name">ThomasLeroy</span></span><span class="player-stat">⚽ 3</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">7</span><span class="player-name">AntoineMartin</span></span><span class="player-stat">⚽ 2</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">8</span><span class="player-name">RayaneBouzid</span></span><span class="player-stat">⚽ 2</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">9</span><span class="player-name">YoussefEl Amrani</span></span><span class="player-stat">⚽ 1</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">10</span><span class="player-name">EmmaBernard</span></span><span class="player-stat">⚽ 1</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">11</span><span class="player-name">LucasDupont</span></span><span class="player-stat">⚽ 0</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">12</span><span class="player-name">HugoPetit</span></span><span class="player-stat">⚽ 0</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">13</span><span class="player-name">NolanGirard</span></span><span class="player-stat">⚽ 0</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">14</span><span class="player-name">InèsDuval</span></span><span class="player-stat">⚽ 0</span>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">🎯 Top Assistants (2025)</div>
+<div class="card-body">
+<div class="player-item">
+<span><span class="player-rank">1</span><span class="player-name">KarimBenali</span></span><span class="player-stat">✅ 12</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">2</span><span class="player-name">SarahMorel</span></span><span class="player-stat">✅ 9</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">3</span><span class="player-name">ThomasLeroy</span></span><span class="player-stat">✅ 7</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">4</span><span class="player-name">RayaneBouzid</span></span><span class="player-stat">✅ 6</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">5</span><span class="player-name">MehdiRahmani</span></span><span class="player-stat">✅ 5</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">6</span><span class="player-name">AmineKhelifi</span></span><span class="player-stat">✅ 4</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">7</span><span class="player-name">EmmaBernard</span></span><span class="player-stat">✅ 4</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">8</span><span class="player-name">AntoineMartin</span></span><span class="player-stat">✅ 3</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">9</span><span class="player-name">LéaFontaine</span></span><span class="player-stat">✅ 3</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">10</span><span class="player-name">YoussefEl Amrani</span></span><span class="player-stat">✅ 2</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">11</span><span class="player-name">LucasDupont</span></span><span class="player-stat">✅ 1</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">12</span><span class="player-name">NolanGirard</span></span><span class="player-stat">✅ 1</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">13</span><span class="player-name">HugoPetit</span></span><span class="player-stat">✅ 0</span>
+</div>
+<div class="player-item">
+<span><span class="player-rank">14</span><span class="player-name">InèsDuval</span></span><span class="player-stat">✅ 0</span>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">🏅 Teams Overview</div>
+<div class="card-body">
+<div class="team-item">
+<div class="team-name">FC Méditerranée - Seniors A</div>
+<div class="team-info">
+<span>🏷️ Senior</span><span>👥 6 players</span>
+</div>
+</div>
+<div class="team-item">
+<div class="team-name">FC Méditerranée - Féminines</div>
+<div class="team-info">
+<span>🏷️ Senior</span><span>👥 4 players</span>
+</div>
+</div>
+<div class="team-item">
+<div class="team-name">FC Méditerranée - U17</div>
+<div class="team-info">
+<span>🏷️ U17</span><span>👥 4 players</span>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">🏟️ Training Facilities</div>
+<div class="card-body">
+<div class="facility-item">
+<div class="facility-name">Infirmerie</div>
+<div class="facility-type">
+        📍  • Medical Room</div>
+</div>
+<div class="facility-item">
+<div class="facility-name">Salle Polyvalente</div>
+<div class="facility-type">
+        📍  • Indoor Hall</div>
+</div>
+<div class="facility-item">
+<div class="facility-name">Salle de Musculation</div>
+<div class="facility-type">
+        📍  • Gym</div>
+</div>
+<div class="facility-item">
+<div class="facility-name">Stade Principal André Roche</div>
+<div class="facility-type">
+        📍  • Natural Grass Pitch</div>
+</div>
+<div class="facility-item">
+<div class="facility-name">Terrain Synthétique B</div>
+<div class="facility-type">
+        📍  • Synthetic Pitch</div>
+</div>
+<div class="facility-item">
+<div class="facility-name">Vestiaire Principal</div>
+<div class="facility-type">
+        📍  • Changing Room</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">📅 Latest Matches</div>
+<div class="card-body"><div class="empty-message">No recent matches</div></div>
+</div>
+<div class="card">
+<div class="card-header">📍 Club Information</div>
+<div class="card-body">
+<div class="team-item">
+<div class="team-name">📍 12 Avenue du Stade</div>
+<div class="team-info"><span>06000Nice</span></div>
+</div>
+<div class="team-item">
+<div class="team-name">🌐 Website</div>
+<div class="team-info"><a href="http://www.fc-mediterranee.fr" target="_blank">http://www.fc-mediterranee.fr</a></div>
+</div>
+</div>
+</div>
+</div>
+</div></body>
+</html>

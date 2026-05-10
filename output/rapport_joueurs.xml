@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rep:clubReport xmlns:rep="http://www.example.com/xml/club-report" formatVersion="1.0" sourceNamespace="http://www.dsti.football-club.com">
+  <rep:clubName>FC Méditerranée</rep:clubName>
+  <rep:players>
+    <rep:player id="PLY-001" captain="true">
+      <rep:teamRef>TEA-001</rep:teamRef>
+      <rep:fullName>Karim Benali</rep:fullName>
+      <rep:position>Midfielder</rep:position>
+      <rep:jersey>10</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>22</rep:matchesPlayed>
+        <rep:goals>8</rep:goals>
+        <rep:assists>12</rep:assists>
+        <rep:minutesPlayed>1890</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-002" captain="false">
+      <rep:teamRef>TEA-001</rep:teamRef>
+      <rep:fullName>Lucas Dupont</rep:fullName>
+      <rep:position>Goalkeeper</rep:position>
+      <rep:jersey>1</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>24</rep:matchesPlayed>
+        <rep:goals>0</rep:goals>
+        <rep:assists>1</rep:assists>
+        <rep:minutesPlayed>2160</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-003" captain="false">
+      <rep:teamRef>TEA-001</rep:teamRef>
+      <rep:fullName>Mehdi Rahmani</rep:fullName>
+      <rep:position>Forward</rep:position>
+      <rep:jersey>9</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>20</rep:matchesPlayed>
+        <rep:goals>14</rep:goals>
+        <rep:assists>5</rep:assists>
+        <rep:minutesPlayed>1650</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-004" captain="false">
+      <rep:teamRef>TEA-001</rep:teamRef>
+      <rep:fullName>Antoine Martin</rep:fullName>
+      <rep:position>Defender</rep:position>
+      <rep:jersey>4</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>23</rep:matchesPlayed>
+        <rep:goals>2</rep:goals>
+        <rep:assists>3</rep:assists>
+        <rep:minutesPlayed>2070</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-005" captain="false">
+      <rep:teamRef>TEA-001</rep:teamRef>
+      <rep:fullName>Youssef El Amrani</rep:fullName>
+      <rep:position>Defender</rep:position>
+      <rep:jersey>5</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>18</rep:matchesPlayed>
+        <rep:goals>1</rep:goals>
+        <rep:assists>2</rep:assists>
+        <rep:minutesPlayed>1530</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-006" captain="false">
+      <rep:teamRef>TEA-001</rep:teamRef>
+      <rep:fullName>Thomas Leroy</rep:fullName>
+      <rep:position>Midfielder</rep:position>
+      <rep:jersey>8</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>19</rep:matchesPlayed>
+        <rep:goals>3</rep:goals>
+        <rep:assists>7</rep:assists>
+        <rep:minutesPlayed>1440</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-007" captain="true">
+      <rep:teamRef>TEA-002</rep:teamRef>
+      <rep:fullName>Amine Khelifi</rep:fullName>
+      <rep:position>Forward</rep:position>
+      <rep:jersey>11</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>16</rep:matchesPlayed>
+        <rep:goals>10</rep:goals>
+        <rep:assists>4</rep:assists>
+        <rep:minutesPlayed>1280</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-008" captain="false">
+      <rep:teamRef>TEA-002</rep:teamRef>
+      <rep:fullName>Hugo Petit</rep:fullName>
+      <rep:position>Goalkeeper</rep:position>
+      <rep:jersey>1</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>15</rep:matchesPlayed>
+        <rep:goals>0</rep:goals>
+        <rep:assists>0</rep:assists>
+        <rep:minutesPlayed>1350</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-009" captain="false">
+      <rep:teamRef>TEA-002</rep:teamRef>
+      <rep:fullName>Rayane Bouzid</rep:fullName>
+      <rep:position>Midfielder</rep:position>
+      <rep:jersey>6</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>14</rep:matchesPlayed>
+        <rep:goals>2</rep:goals>
+        <rep:assists>6</rep:assists>
+        <rep:minutesPlayed>1120</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-010" captain="false">
+      <rep:teamRef>TEA-002</rep:teamRef>
+      <rep:fullName>Nolan Girard</rep:fullName>
+      <rep:position>Defender</rep:position>
+      <rep:jersey>3</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>16</rep:matchesPlayed>
+        <rep:goals>0</rep:goals>
+        <rep:assists>1</rep:assists>
+        <rep:minutesPlayed>1380</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-011" captain="true">
+      <rep:teamRef>TEA-003</rep:teamRef>
+      <rep:fullName>Sarah Morel</rep:fullName>
+      <rep:position>Midfielder</rep:position>
+      <rep:jersey>10</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>20</rep:matchesPlayed>
+        <rep:goals>6</rep:goals>
+        <rep:assists>9</rep:assists>
+        <rep:minutesPlayed>1750</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-012" captain="false">
+      <rep:teamRef>TEA-003</rep:teamRef>
+      <rep:fullName>Léa Fontaine</rep:fullName>
+      <rep:position>Forward</rep:position>
+      <rep:jersey>7</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>19</rep:matchesPlayed>
+        <rep:goals>11</rep:goals>
+        <rep:assists>3</rep:assists>
+        <rep:minutesPlayed>1600</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-013" captain="false">
+      <rep:teamRef>TEA-003</rep:teamRef>
+      <rep:fullName>Emma Bernard</rep:fullName>
+      <rep:position>Defender</rep:position>
+      <rep:jersey>2</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>21</rep:matchesPlayed>
+        <rep:goals>1</rep:goals>
+        <rep:assists>4</rep:assists>
+        <rep:minutesPlayed>1890</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+    <rep:player id="PLY-014" captain="false">
+      <rep:teamRef>TEA-003</rep:teamRef>
+      <rep:fullName>Inès Duval</rep:fullName>
+      <rep:position>Goalkeeper</rep:position>
+      <rep:jersey>1</rep:jersey>
+      <rep:seasonStats season="2025">
+        <rep:matchesPlayed>18</rep:matchesPlayed>
+        <rep:goals>0</rep:goals>
+        <rep:assists>0</rep:assists>
+        <rep:minutesPlayed>1620</rep:minutesPlayed>
+      </rep:seasonStats>
+    </rep:player>
+  </rep:players>
+</rep:clubReport>
